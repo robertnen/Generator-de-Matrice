@@ -1,5 +1,4 @@
-function HouseholderGenerator()
-
+function GramSchmidtGenerator()
   n = 3; % dimensiunea matricei
   m = 3; % cel mai mare numar natural care poate aparea
   maxZero = 4; % numarul maxim de zerouri pe care il poate avea A
@@ -16,7 +15,18 @@ function HouseholderGenerator()
       isValid = 0;
     endif
 
-    [Q, R] = householder(A);
+    for i = 1 : n
+      if ~A(i, i)
+        isValid = 0;
+      endif
+    endfor
+
+    if isValid
+      [Q, R] = GramSchmidt(A);
+    else
+      R = zeros(n, n);
+      R(1, n) = 1; % ca sa predefinesc pe R
+    endif
 
     for i = 1 : n
       for j = 1 : n
