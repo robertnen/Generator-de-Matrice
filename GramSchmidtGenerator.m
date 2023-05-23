@@ -3,7 +3,7 @@ function GramSchmidtGenerator()
   m = 3; % cel mai mare numar natural care poate aparea
   maxZero = 4; % numarul maxim de zerouri pe care il poate avea A
   tol = 0.001; % cat se accepta toleranta (nu schimba daca nu esti sigur/a)
-  iter = 10; % numarul de matrici generate
+  iter = 100; % numarul de matrici generate
 
   while iter
 
